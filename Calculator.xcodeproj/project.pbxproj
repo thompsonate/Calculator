@@ -14,6 +14,7 @@
 		43D804F41E10751A007192B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D804F21E10751A007192B5 /* LaunchScreen.storyboard */; };
 		43D804FF1E10751A007192B5 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D804FE1E10751A007192B5 /* CalculatorTests.swift */; };
 		43D8050A1E10751A007192B5 /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D805091E10751A007192B5 /* CalculatorUITests.swift */; };
+		43D8051A1E10902F007192B5 /* CalculatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D805191E10902F007192B5 /* CalculatorDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		43D805051E10751A007192B5 /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D805091E10751A007192B5 /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		43D8050B1E10751A007192B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43D805191E10902F007192B5 /* CalculatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				43D804E91E10751A007192B5 /* AppDelegate.swift */,
 				43D804EB1E10751A007192B5 /* ViewController.swift */,
+				43D805191E10902F007192B5 /* CalculatorDelegate.swift */,
 				43D804ED1E10751A007192B5 /* Main.storyboard */,
 				43D804F01E10751A007192B5 /* Assets.xcassets */,
 				43D804F21E10751A007192B5 /* LaunchScreen.storyboard */,
@@ -193,6 +196,7 @@
 				TargetAttributes = {
 					43D804E51E107519007192B5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = YT2C78F725;
 						ProvisioningStyle = Automatic;
 					};
 					43D804F91E10751A007192B5 = {
@@ -259,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D8051A1E10902F007192B5 /* CalculatorDelegate.swift in Sources */,
 				43D804EC1E10751A007192B5 /* ViewController.swift in Sources */,
 				43D804EA1E10751A007192B5 /* AppDelegate.swift in Sources */,
 			);
@@ -412,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YT2C78F725;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.Calculator;
@@ -424,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YT2C78F725;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.natethompson.Calculator;
