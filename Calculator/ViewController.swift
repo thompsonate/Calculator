@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     let calculations: CalculationDelegate = DefaultCalculationDelegate()
     
     @IBOutlet weak var resultLabel: UILabel!
@@ -43,11 +43,13 @@ class ViewController: UIViewController {
     @IBAction func equalsButtonPressed(_ sender: UIButton) {
         calculations.clearInputAndSave(true)
         resultLabel.text = calculations.resultNumber.roundedString
+        reloadTable()
     }
     
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         calculations.clearInputAndSave(false)
         resultLabel.text = calculations.resultNumber.roundedString
+        reloadTable()
     }
     
     func setOperator(_ character: String, withFunction function: @escaping (Double, Double) -> (Double)) {
@@ -59,5 +61,38 @@ class ViewController: UIViewController {
         resultLabel.text = calculations.resultNumber.roundedString
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return calculations.previousExpressions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let index = indexPath.item
+        let (expression, result) = calculations.previousExpressions[index]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "paperTapeCell") as! PaperTapeCell
+        cell.customize(expression + " " + result)
+        return cell
+    }
+    
+    func reloadTable() {
+        tableView.reloadData()
+        
+        let lastIndex = calculations.previousExpressions.count - 1
+        let indexPath = NSIndexPath(forItem: lastIndex, inSection: 0)
+        if lastIndex > 0 {
+            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+        }
+    }
+    
+}
+
+class PaperTapeCell: UITableViewCell {
+    
+    @IBOutlet weak var label: UILabel!
+
+    
+    func customize(_ customString: String) {
+        label.text = customString
+    }
 }
 
