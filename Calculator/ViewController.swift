@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
     let calculations: CalculationDelegate = DefaultCalculationDelegate()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var resultLabel: UILabel!
 
     @IBAction func numberButtonPressed(_ sender: UIButton) {
@@ -78,9 +80,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         tableView.reloadData()
         
         let lastIndex = calculations.previousExpressions.count - 1
-        let indexPath = NSIndexPath(forItem: lastIndex, inSection: 0)
+        let indexPath = IndexPath(item: lastIndex, section: 0)
         if lastIndex > 0 {
-            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
     }
     
